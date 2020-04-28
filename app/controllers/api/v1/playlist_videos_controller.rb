@@ -23,6 +23,6 @@ class Api::V1::PlaylistVideosController < ApplicationController
     private
 
     def playlist_video_params
-        params.require(:playlist_video).permit()
+        params.require(:playlist_video).permit(:playlist_id, :video_id)
     end
 end

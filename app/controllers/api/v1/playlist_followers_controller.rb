@@ -23,6 +23,6 @@ class Api::V1::PlaylistFollowersController < ApplicationController
     private
 
     def playlist_follower_params
-        params.require(:playlist_follower).permit()
+        params.require(:playlist_follower).permit(:playlist_id, :user_id)
     end
 end

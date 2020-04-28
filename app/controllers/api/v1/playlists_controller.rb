@@ -1,11 +1,18 @@
 class Api::V1::PlaylistsController < ApplicationController
+
+    def index
+        playlists = Playlist.all
+        render json: playlists
+    end
+
     def show
         playlist = Playlist.find(params[:id])
         render json: {playlist: PlaylistSerializer.new(playlist)}
     end
 
     def create
-        playlist = Playlist.create(playlist_params)
+        new_playlist_params = { playlist_name: playlist_params[:playlist_name], description: playlist_params[:description], user_id: user_id }
+        playlist = Playlist.create(new_playlist_params)
         render json: {playlist: PlaylistSerializer.new(playlist)}
     end
 
@@ -18,6 +25,6 @@ class Api::V1::PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:playlist_name)
+        params.require(:playlist).permit(:playlist_name, :description, :user_id)
     end
 end
