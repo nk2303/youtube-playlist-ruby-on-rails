@@ -24,3 +24,5 @@ dogvid = Video.create(youtube_video_id: "sVaU1ctEkes")
 catplaylistvideo = PlaylistVideo.create(playlist_id: catplaylist.id,video_id: catvid.id)
 dogplaylistvideo = PlaylistVideo.create(playlist_id: dogplaylist.id,video_id: dogvid.id)
 
+
+

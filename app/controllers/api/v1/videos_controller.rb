@@ -1,4 +1,10 @@
 class Api::V1::VideosController < ApplicationController
+
+    def index
+        @videos = Video.all 
+        render json: @videos, status: :ok
+    end
+
     def show
         video = Video.find(params[:id])
         render json: {video: VideoSerializer.new(video)}

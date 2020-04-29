@@ -1,7 +1,9 @@
 class Api::V1::PlaylistsController < ApplicationController
 
     def index
-        playlists = Playlist.all
+        #figure out if it is the right route
+        playlists = current_user.playlists
+        # playlists = Playlist.all
         render json: playlists
     end
 

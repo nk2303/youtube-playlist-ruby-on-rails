@@ -1,4 +1,10 @@
 class Api::V1::PlaylistVideosController < ApplicationController
+
+    def index
+        playlist_videos = PlaylistVideo.all
+        render json: playlist_videos
+    end
+
     def create
         playlist_video = PlaylistVideo.create(playlist_video_params)
         render json: {playlist_video: PlaylistVideoSerializer.new(playlist_video)}
