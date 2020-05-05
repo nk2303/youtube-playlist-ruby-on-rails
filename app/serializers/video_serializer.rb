@@ -1,3 +1,3 @@
 class VideoSerializer < ActiveModel::Serializer
-  attributes :id, :youtube_video_id
+  attributes :id, :youtube_video_id, :playlists, :comments
 end
