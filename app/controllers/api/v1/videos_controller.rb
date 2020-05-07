@@ -2,7 +2,6 @@ class Api::V1::VideosController < ApplicationController
 
     def index
         @videos = Video.all 
-        # @videos = current_user.playlists
         render json: @videos, status: :ok
     end
 

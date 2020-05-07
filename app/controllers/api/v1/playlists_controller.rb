@@ -2,7 +2,6 @@ class Api::V1::PlaylistsController < ApplicationController
 
     def index
         playlists = current_user.playlists
-        # playlists = Playlist.all
         render json: playlists
     end
 
@@ -19,9 +18,6 @@ class Api::V1::PlaylistsController < ApplicationController
 
     def destroy
         playlist = Playlist.find(params[:id])
-        if playlist.videos
-            playlist.videos.map{|v| v.delete}
-        end
         playlist.destroy
         render json: {message: "Playlist successfully deleted"} 
     end

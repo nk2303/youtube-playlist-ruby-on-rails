@@ -26,6 +26,12 @@ class Api::V1::PlaylistVideosController < ApplicationController
         render json: {message: ""}
     end
 
+    def deleterecord
+        video_playlist = PlaylistVideo.all.find{|p_v| p_v.video_id == params[:video_id].to_i && p_v.playlist_id == params[:playlist_id].to_i}
+        video_playlist.destroy
+        render json: {message: "Playlist_video deleted"}
+    end
+
     private
 
     def playlist_video_params
