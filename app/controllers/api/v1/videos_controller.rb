@@ -7,7 +7,8 @@ class Api::V1::VideosController < ApplicationController
 
     def show
         video = Video.find(params[:id])
-        render json: {video: VideoSerializer.new(video)}
+        option = {include: [:comments, :user => {:only => :username} ]}
+        render json: {video: VideoSerializer.new(video, option)}
     end
 
     def create

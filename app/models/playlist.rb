@@ -4,6 +4,6 @@ class Playlist < ApplicationRecord
     has_many :playlist_videos, dependent: :delete_all
     has_many :videos, through: :playlist_videos
 
-    validates :playlist_name, {presence: true, uniqueness: true}
+    validates :playlist_name, presence: true
 
 end
