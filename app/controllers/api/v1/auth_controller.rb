@@ -3,6 +3,7 @@ class Api::V1::AuthController < ApplicationController
 
     def create
         user = User.find_by(username: user_login_params[:username])
+        #User authenticate coming from bcrypt
         if user && user.authenticate(user_login_params[:password])
           token = issue_token(user)
           render json: {user: UserSerializer.new(user), jwt: token}
