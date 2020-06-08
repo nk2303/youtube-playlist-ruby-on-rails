@@ -2,6 +2,8 @@
 
 A playlist-management tool for YouTube streaming which minimizes video ad interference.
 
+![Image of account page for managing playlists](public/GHthumbnailpic.png)
+
 ## Features
 
 The user can make an account, create a playlist, search videos from Youtube, and  add the video into that playlist.
