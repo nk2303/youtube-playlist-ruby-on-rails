@@ -1,24 +1,43 @@
-# README
+# Youtube Playlist client
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A playlist-management tool for YouTube streaming which minimizes video ad interference.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+The user can make an account, create a playlist, search videos from Youtube, and  add the video into that playlist.
 
-* System dependencies
+## Authors
 
-* Configuration
+Built by [Ngan Kim Khong](https://github.com/nk2303)
 
-* Database creation
+## Technology Used 
 
-* Database initialization
+- Javascript, React, Redux
+- Ruby on Rails
 
-* How to run the test suite
+## Video Tutorial 
+https://www.youtube.com/watch?v=axmKyyd579c
 
-* Services (job queues, cache servers, search engines, etc.)
+## Installation 
+(backend) (https://github.com/nk2303/youtube-playlist-ruby-on-rails)
+1) Clone the repo. 
+2) From your terminal, navigate to the youtube-playlist-ruby-on-rails.  
+3) From your terminal, type: 
+  ```bundle install```
+  ```rails db:seed```
+  ```rails db:migrate```
+  ```rails s```
+  
+(frontend) (https://github.com/nk2303/youtube-playlist)
+1) Clone the repo. 
+2) From your terminal, navigate to the youtube-playlist.  
+3) From your terminal, type:
+``` npm start ```
+4) From your web browswer:
+    - sign up with a username
+5) Enjoy :)
 
-* Deployment instructions
+## Contributing
 
-* ...
+Contributions are welcome. Feel free to open a pull request or branch from this project.
+
