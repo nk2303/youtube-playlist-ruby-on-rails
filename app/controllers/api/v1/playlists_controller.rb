@@ -6,7 +6,8 @@ class Api::V1::PlaylistsController < ApplicationController
     end
 
     def all_playlists
-        all_playlists = Playlist.all
+        current_user_playlists_id = current_user.playlists.map{|p_obj| p_obj.id}
+        all_playlists = Playlist.all.select { |p| !current_user_playlists_id.include? p.id }
         render json: all_playlists, status: :ok
     end
 
