@@ -5,6 +5,11 @@ class Api::V1::PlaylistsController < ApplicationController
         render json: playlists
     end
 
+    def all_playlists
+        all_playlists = Playlist.all
+        render json: all_playlists, status: :ok
+    end
+
     def show
         playlist = Playlist.find(params[:id])
         render json: {playlist: PlaylistSerializer.new(playlist)}
