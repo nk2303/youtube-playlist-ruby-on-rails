@@ -29,6 +29,12 @@ class Api::V1::PlaylistFollowersController < ApplicationController
         render json: {message: "PlaylistFollower successfully deleted"}
     end
 
+    def deleteplaylistfollow
+        playlist_follower = PlaylistFollower.all.find{|p_f| p_f.playlist_id == params[:playlist_id].to_i && p_f.user_id == current_user.id}
+        playlist_follower.destroy
+        render json: {message: "Playlist_follower deleted"}
+    end
+
     private
 
     def playlist_follower_params
