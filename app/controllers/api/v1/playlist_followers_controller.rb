@@ -1,6 +1,14 @@
 class Api::V1::PlaylistFollowersController < ApplicationController
+
+    def index
+        playlist_followers = PlaylistFollower.select{|p_f| p_f.user_id == current_user.id}
+        user_followed_playlists = playlist_followers.map{|p_f| Playlist.find(p_f.playlist_id) }
+        render json: user_followed_playlists
+    end
+
     def create
-        playlist_follower = PlaylistFollower.create(playlist_follower_params)
+        new_playlist_follower = { playlist_id: playlist_follower_params[:playlist_id], user_id: current_user.id }
+        playlist_follower = PlaylistFollower.create(new_playlist_follower)
         render json: {playlist_follower: PlaylistFollowerSerializer.new(playlist_follower)}
     end
 

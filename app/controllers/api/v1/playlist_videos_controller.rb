@@ -1,4 +1,5 @@
 class Api::V1::PlaylistVideosController < ApplicationController
+    
 
     def index
         playlist_videos = PlaylistVideo.all
