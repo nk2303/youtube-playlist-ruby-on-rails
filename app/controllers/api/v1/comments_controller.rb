@@ -21,9 +21,14 @@ class Api::V1::CommentsController < ApplicationController
         render json: {message: "Comment successfully deleted"} 
     end
 
+    def commentsFromVideo
+        comments = Comment.all.select{ |c| c.youtube_video_id == params[:youtube_video_id]}
+        render json: comments, status: :ok
+    end
+
     private
 
     def comment_params
-        params.require(:comment).permit(:content, :user_id, :video_id)
+        params.require(:comment).permit(:content, :user_id, :youtube_video_id)
     end
 end
