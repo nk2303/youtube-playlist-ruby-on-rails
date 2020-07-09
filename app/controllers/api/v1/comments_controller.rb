@@ -23,6 +23,8 @@ class Api::V1::CommentsController < ApplicationController
 
     def commentsFromVideo
         comments = Comment.all.select{ |c| c.youtube_video_id == params[:youtube_video_id]}
+        puts params[:youtube_video_id]
+        puts comments
         render json: comments, status: :ok
     end
 

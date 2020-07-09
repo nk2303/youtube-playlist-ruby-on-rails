@@ -41,5 +41,6 @@ dogplaylistvideo6 = PlaylistVideo.create(playlist_id: dogplaylist.id,video_id: d
 dogplaylistvideo7 = PlaylistVideo.create(playlist_id: dogplaylist.id,video_id: dogvid7.id)
 
 catvidcom1 = Comment.create(content: "This is so cute!", user_id: kim.id, youtube_video_id: catvid.youtube_video_id)
-catvidcom2 = Comment.create(content: "I want a cat!", user_id: kim.id, youtube_video_id: catvid.youtube_video_id)
+catvidcom2 = Comment.create(content: "I want a cat!", user_id: coffee.id, youtube_video_id: catvid.youtube_video_id)
 dogvidcom1 = Comment.create(content: "I want this puppy!", user_id: kim.id, youtube_video_id: dogvid.youtube_video_id)
+dogvidcom1 = Comment.create(content: "This puppy so cute!", user_id: coffee.id, youtube_video_id: dogvid.youtube_video_id)
